@@ -1,0 +1,38 @@
+.listItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+.listItem img {
+    object-fit: contain;
+    height: 150px;
+    width: 150px;
+    margin: 0.25em;
+}
+
+.listItem p {
+    text-align: center;
+    font-size: medium;
+}
+
+.listItem_item {
+    min-width: 20%;
+}
+
+@media (max-width: 768px) {
+    .listItem p {
+        font-size: small;
+    }
+    .listItem img {
+        height: 120px;
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .listItem p {
+        font-size: x-small;
+    }
+}

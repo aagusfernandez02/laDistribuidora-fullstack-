@@ -1,0 +1,21 @@
+.table {
+    display: flex;
+    flex-direction: column;
+}
+
+.headers {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--dark-gray);
+    background-color: var(--white);
+}
+
+.headers p {
+    min-width: 20%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}

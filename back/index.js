@@ -2,6 +2,7 @@ const express = require('express');
 const mongooose = require('mongoose');
 const dotenv = require('dotenv');
 const app = express();
+const cors = require('cors');
 
 const usersRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
@@ -14,6 +15,7 @@ mongooose
     .then(() => console.log("Mongoose connected succesfully"))
     .catch((err) => console.log(err));
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
