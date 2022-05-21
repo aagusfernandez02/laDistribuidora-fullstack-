@@ -33,7 +33,7 @@ router.delete(":/id", verifyTokenAndAuthorization, async(req, res) => {
 });
 
 // GET USER
-router.get("/:id", verifyTokenAndAdmin, async(req, res) => {
+router.get("/:id", async(req, res) => {
     try {
         const user = await User.findById(req.params.id);
         const { password, ...others } = user._doc
@@ -44,7 +44,8 @@ router.get("/:id", verifyTokenAndAdmin, async(req, res) => {
 });
 
 // GET ALL USERS
-router.get("/", verifyTokenAndAdmin, async(req, res) => {
+// router.get("/", verifyTokenAndAdmin, async(req, res) => {
+router.get("/", async(req, res) => {
 
     try {
         const users = await User.find();
@@ -53,5 +54,6 @@ router.get("/", verifyTokenAndAdmin, async(req, res) => {
         res.status(500).json(error);
     }
 });
+
 
 module.exports = router;

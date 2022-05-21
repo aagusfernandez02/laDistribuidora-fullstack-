@@ -10,6 +10,11 @@
     height: 150px;
     width: 150px;
     margin: 0.25em;
+    padding-left: 1%;
+    padding-right: 1%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .listItem p {
@@ -19,6 +24,38 @@
 
 .listItem_item {
     min-width: 20%;
+}
+
+.container {
+    position: relative;
+}
+
+.editIcon {
+    cursor: pointer;
+    font-size: x-large;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: var(--light-gray);
+    /* Shadow */
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transition: .5s;
+}
+
+.editIcon:hover {
+    left: 9px;
+    top: 9px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    transition: .5s;
 }
 
 @media (max-width: 768px) {

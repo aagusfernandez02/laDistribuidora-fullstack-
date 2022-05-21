@@ -7,15 +7,40 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Modal from './components/modal/Modal';
 
 function App() {
   const [isSigned, setIsSigned] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [idProductModal, setIdProductModal] = useState("");
+  const [mustRefresh, setMustRefresh] = useState(false);
+
 
   return (
     <Router>
-      <Header isSigned={isSigned}/>
-      <List/>
+      <Header 
+        isAdmin={isAdmin}
+        isSigned={isSigned}
+        setIsAdmin={setIsAdmin}
+        setIsSigned={setIsSigned}
+      />
+      <List 
+        isAdmin={isAdmin}
+        setIsOpen={setIsOpen}
+        setIdProductModal={setIdProductModal}
+        mustRefresh={mustRefresh}
+      />
+      {
+        isOpen && 
+        <Modal 
+          idProductModal={idProductModal} 
+          closeModal={()=>setIsOpen(false)}
+          mustRefresh={mustRefresh}
+          setMustRefresh={setMustRefresh}
+        />
+      }
     </Router>
   );
 }

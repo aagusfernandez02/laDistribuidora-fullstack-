@@ -10,6 +10,7 @@
     justify-content: space-around;
     border-bottom: 2px solid var(--dark-gray);
     background-color: var(--white);
+    z-index: 1000;
 }
 
 .headers p {
@@ -18,4 +19,18 @@
     font-weight: bold;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+    .headers p {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: small;
+    }
+}
+
+@media (max-width: 480px) {
+    .headers p {
+        font-size: x-small;
+    }
 }

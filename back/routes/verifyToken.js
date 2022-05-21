@@ -34,4 +34,13 @@ const verifyTokenAndAdmin = (req, res, next) => {
     });
 };
 
-module.exports = { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin };
+const verifyAdmin = (req, res, next) => {
+    if (req.user.isAdmin) {
+        next();
+    } else {
+        res.status(403).json("Operacion no permitida");
+    }
+}
+
+
+module.exports = { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin, verifyAdmin };
