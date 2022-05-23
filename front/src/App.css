@@ -11,3 +11,8 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+input::placeholder {
+    opacity: .3;
+    color: var(--dark-gray);
+}

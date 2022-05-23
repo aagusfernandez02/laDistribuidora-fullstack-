@@ -7,6 +7,7 @@ import { Formik } from "formik";
 const Modal = ({ idProductModal, closeModal, setMustRefresh, mustRefresh }) => {
   const [product, setProduct] = useState({});
   const [refresh, setRefresh] = useState(false);
+  
 
   const actualizarProducto = async (valores) => {
     try {
@@ -118,7 +119,7 @@ const Modal = ({ idProductModal, closeModal, setMustRefresh, mustRefresh }) => {
                   onBlur={handleBlur}
                 />
                 {touched.producto && errors.producto && (
-                  <div>{errors.producto}</div>
+                  <div className={styles.errorMsg}>{errors.producto}</div>
                 )}
               </div>
               <div>
@@ -132,7 +133,7 @@ const Modal = ({ idProductModal, closeModal, setMustRefresh, mustRefresh }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {touched.marca && errors.marca && <div>{errors.marca}</div>}
+                {touched.marca && errors.marca && <div className={styles.errorMsg}>{errors.marca}</div>}
               </div>
               <div>
                 <label htmlFor="tamanio">Tamaño</label>
@@ -146,7 +147,7 @@ const Modal = ({ idProductModal, closeModal, setMustRefresh, mustRefresh }) => {
                   onBlur={handleBlur}
                 />
                 {touched.tamanio && errors.tamanio && (
-                  <div>{errors.tamanio}</div>
+                  <div className={styles.errorMsg}>{errors.tamanio}</div>
                 )}
               </div>
               <div>
@@ -160,7 +161,7 @@ const Modal = ({ idProductModal, closeModal, setMustRefresh, mustRefresh }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {touched.precio && errors.precio && <div>{errors.precio}</div>}
+                {touched.precio && errors.precio && <div className={styles.errorMsg}>{errors.precio}</div>}
               </div>
               <div>
                 <label htmlFor="img">URL Imagen</label>
@@ -177,9 +178,9 @@ const Modal = ({ idProductModal, closeModal, setMustRefresh, mustRefresh }) => {
                   <img src={values.img} alt="Imagen del producto" />
                 </div>
 
-                {touched.img && errors.img && <div>{errors.img}</div>}
+                {touched.img && errors.img && <div className={styles.errorMsg}>{errors.img}</div>}
               </div>
-              <button type="submit">ACTUALIZAR</button>
+              <button type="submit">ENVIAR</button>
             </form>
           )}
         </Formik>

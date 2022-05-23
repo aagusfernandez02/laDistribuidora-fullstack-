@@ -24,6 +24,7 @@ const LoginModal = ({ closeModal, setIsAdmin, setIsSigned }) => {
         setIsAdmin(true);
       }
       window.alert("Sesión iniciada correctamente. Bienvenido");
+      localStorage.setItem("user",JSON.stringify(res.data));
     } catch (error) {
       console.log(error.response.data);
     }

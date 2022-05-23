@@ -3,7 +3,7 @@ import styles from './list.module.css';
 import axios from 'axios';
 import ListItem from '../listItem/ListItem';
 
-const List = ({isAdmin, setIsOpen, setIdProductModal, mustRefresh}) => {
+const List = ({isAdmin, setIsOpen, setIdProductModal, mustRefresh, setMustRefresh}) => {
   const [products, setProducts] = useState([]);
 
   useEffect( ()=>{
@@ -37,6 +37,8 @@ const List = ({isAdmin, setIsOpen, setIdProductModal, mustRefresh}) => {
               producto={product}
               setIsOpen={setIsOpen}
               setIdProductModal={setIdProductModal}
+              setMustRefresh={setMustRefresh}
+              mustRefresh={mustRefresh}
             />
           ))
         }

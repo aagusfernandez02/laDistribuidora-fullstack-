@@ -50,12 +50,16 @@
 }
 
 .editIcon:hover {
-    left: 9px;
-    top: 9px;
+    transform: translateY(-2px);
+    transform: translateX(-2px);
     box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
     transition: .5s;
+}
+
+.delete {
+    top: 60px;
 }
 
 @media (max-width: 768px) {
